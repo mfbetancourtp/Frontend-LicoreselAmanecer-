@@ -38,12 +38,13 @@ nav a:hover {
     color: #c8a166;
 }
 
-/* PORTADA / HERO */
+/* PORTADA / HERO (CON EL CAMBIO CLAVE) */
 .portada {
-    background-image: url('img/portada.png'); 
+    /* <-- ESTA ES LA LÍNEA QUE CAMBIA PARA APUNTAR A TU IMAGEN LOCAL images.jpeg --> */
+    background-image: url('images.jpeg'); 
     background-size: cover;        
     background-position: center;  
-    background-color: #333; 
+    background-color: #333; /* Respaldo si no carga la imagen */
     height: 85vh;                
     display: flex;                
     justify-content: center;
@@ -57,7 +58,7 @@ nav a:hover {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura para que el texto resalte */
 }
 
 .contenido-portada {
@@ -131,6 +132,16 @@ nav a:hover {
     color: #999;
     margin-bottom: 15px;
     font-size: 1.2em;
+}
+
+/* Estilo para las nuevas imágenes reales de productos (Mantenlo como está) */
+.imagen-producto {
+    width: 100%;           
+    height: 180px;         
+    object-fit: cover;     
+    border-radius: 5px;    
+    margin-bottom: 15px;    
+    border: 1px solid #333; 
 }
 
 .tarjeta-producto h3 {
