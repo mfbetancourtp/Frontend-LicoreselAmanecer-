@@ -1,0 +1,245 @@
+/* Reseteo y Estilos Base */
+body {
+    background-color: #1a1a1a; 
+    color: #f1d9d9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER Y NAVEGACIÓN */
+header {
+    background-color: #000; 
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #c8a166;
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #c8a166;
+}
+
+nav a {
+    color: #f1d9d9;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c8a166;
+}
+
+/* PORTADA / HERO */
+.portada {
+    background-image: url('img/portada.png'); 
+    background-size: cover;        
+    background-position: center;  
+    background-color: #333; 
+    height: 85vh;                
+    display: flex;                
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; 
+    position: relative;                
+}
+
+.portada::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.contenido-portada {
+    z-index: 1; 
+}
+
+.contenido-portada h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #c8a166;
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: #c8a166;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-principal:hover {
+    background-color: #b08d57;
+}
+
+/* SECCIÓN CATÁLOGO Y GRID */
+.seccion-catalogo {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.seccion-catalogo h2 {
+    color: #c8a166;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.contenedor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.tarjeta-producto {
+    background-color: #2a2a2a;
+    border: 1px solid #b08d57;
+    border-radius: 8px;
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px); 
+}
+
+.img-placeholder {
+    background-color: #444;
+    height: 180px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.tarjeta-producto h3 {
+    margin: 10px 0;
+    font-size: 1.3em;
+}
+
+.precio {
+    font-size: 1.4em;
+    color: #c8a166;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.boton-carrito {
+    background-color: #c8a166;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-carrito:hover {
+    background-color: #b08d57;
+}
+
+/* SECCIÓN CONTACTO Y FORMULARIO */
+.seccion-contacto {
+    background-color: #111; 
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.seccion-contacto h2 {
+    color: #c8a166;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.seccion-contacto p {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.formulario {
+    max-width: 500px; 
+    margin: 0 auto;   
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #b08d57;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; 
+}
+
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: #c8a166;
+    box-shadow: 0 0 8px rgba(200, 161, 102, 0.4);
+}
+
+.boton-enviar {
+    background-color: #c8a166;
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background-color: #b08d57;
+}
+
+/* WHATSAPP FLOTANTE */
+.boton-flotante-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; 
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.boton-flotante-wa:hover {
+    transform: scale(1.05);
+}

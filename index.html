@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licores el Amanecer - Tienda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Licores el Amanecer</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#perfil">Mi Cuenta</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="portada">
+        <div class="contenido-portada">
+            <h1>Licores el Amanecer</h1>
+            <p>Vive la verdadera alta calidad en licores.</p>
+            <a href="#catalogo" class="boton-principal">Explorar Catálogo</a>
+        </div>
+    </section>
+
+    <section id="catalogo" class="seccion-catalogo">
+        <h2>Nuestro Catálogo</h2>
+        <div class="contenedor-grid">
+            
+            <div class="tarjeta-producto">
+                <div class="img-placeholder">🥃 Foto Whisky</div>
+                <h3>Whisky Premium</h3>
+                <p class="precio">$120.000</p>
+                <button class="boton-carrito">Añadir al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <div class="img-placeholder">🍷 Foto Vino</div>
+                <h3>Vino Tinto Reserva</h3>
+                <p class="precio">$65.000</p>
+                <button class="boton-carrito">Añadir al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <div class="img-placeholder">🌵 Foto Tequila</div>
+                <h3>Tequila Añejo</h3>
+                <p class="precio">$95.000</p>
+                <button class="boton-carrito">Añadir al Carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes alguna duda o un pedido para un evento especial? Escríbenos.</p>
+        
+        <form action="#" method="POST" class="formulario">
+            <input type="text" placeholder="Tu Nombre Completo" required>
+            <input type="email" placeholder="Tu Correo Electrónico" required>
+            <textarea placeholder="¿En qué te podemos ayudar?" rows="4" required></textarea>
+            <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <a href="https://wa.me/573188051459?text=Hola!%20Necesito%20ayuda%20con%20un%20pedido%20en%20Licores%20el%20Amanecer" 
+       target="_blank" 
+       class="boton-flotante-wa">
+       💬 Asesoría WhatsApp
+    </a>
+
+</body>
+</html>
