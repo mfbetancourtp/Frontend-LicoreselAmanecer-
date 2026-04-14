@@ -120,6 +120,50 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mostrar mensaje de éxito
             formulario.innerHTML = '<h3 style="color:#25d366; text-align:center; margin:0;">¡Mensaje enviado con éxito! Te contactaremos pronto.</h3>';
         });
+    // --- 5 EVENTOS DEL COMPAÑERO PARA LA ENTREGA ---
+
+    // EVENTO 1: 'mouseenter' en el logo o título para un efecto visual
+    const titulo = document.querySelector('h1');
+    if (titulo) {
+        titulo.addEventListener('mouseenter', () => {
+            titulo.style.color = '#e67e22'; // Cambia a un tono naranja licor
+            titulo.style.transition = '0.3s';
+        });
+        titulo.addEventListener('mouseleave', () => {
+            titulo.style.color = ''; // Vuelve al color original
+        });
     }
 
-});
+    // EVENTO 2: 'scroll' para mostrar un mensaje o cambiar el fondo del nav
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        } else {
+            nav.style.backgroundColor = '';
+        }
+    });
+
+    // EVENTO 3: 'keydown' para cerrar modales o alertas con la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            console.log('Usuario intentó salir con Escape');
+            // Aquí podrías cerrar un carrito o modal si lo tuvieras
+        }
+    });
+
+    // EVENTO 4: 'dblclick' en las imágenes de productos para un "zoom" rápido
+    const imagenes = document.querySelectorAll('.producto img');
+    imagenes.forEach(img => {
+        img.addEventListener('dblclick', () => {
+            img.style.transform = img.style.transform === 'scale(1.2)' ? 'scale(1)' : 'scale(1.2)';
+            img.style.transition = '0.5s';
+        });
+    });
+
+    // EVENTO 5: 'load' para confirmar que todo el catálogo cargó bien
+    window.addEventListener('load', () => {
+        console.log('Catálogo de Licores el Amanecer listo para el cliente.');
+    )
+
+);
