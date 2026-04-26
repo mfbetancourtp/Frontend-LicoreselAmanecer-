@@ -3,52 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licores el Amanecer - Tienda</title>
+    <title>Licores el Amanecer | Tienda Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">Licores el Amanecer</div>
+    <header id="main-header">
+        <div class="logo">El Amanecer</div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#catalogo">Catálogo</a>
             <a href="#contacto">Contacto</a>
-            <a href="#perfil">Mi Cuenta</a>
         </nav>
     </header>
 
     <section id="inicio" class="portada">
-        <div class="contenido-portada">
-            <h1>Licores el Amanecer</h1>
-            <p>Vive la verdadera alta calidad en licores.</p>
-            <a href="#catalogo" class="boton-principal">Explorar Catálogo</a>
+        <h1>Selección de Herencia</h1>
+        <p>La colección más exclusiva de licores del mundo.</p>
+    </section>
+
+    <div id="modal-pedido" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:3000; justify-content:center; align-items:center; backdrop-filter:blur(8px);">
+        <div style="background:#121212; padding:40px; border-radius:12px; border:1px solid var(--oro); max-width:500px; width:90%;">
+            <h2 style="color:var(--oro); margin-top:0;">Finalizar Pedido</h2>
+            <p id="detalle-pedido-texto" style="color:#A0A0A0; font-size:1.1rem; margin-bottom: 20px;"></p>
+            
+            <form id="form-pedido" class="formulario" style="padding:0;">
+                <input type="hidden" id="pedido-producto">
+                <input type="hidden" id="pedido-precio">
+                
+                <input type="text" id="pedido-nombre" placeholder="Nombre completo" required>
+                <input type="text" id="pedido-telefono" placeholder="WhatsApp / Teléfono" required>
+                <input type="text" id="pedido-direccion" placeholder="Dirección de Entrega" required>
+                
+                <div style="display:flex; gap:10px; margin-top: 10px;">
+                    <button type="button" id="btn-cerrar-modal" style="flex:1; padding:15px; background:transparent; color:white; border:1px solid #444; border-radius:8px; cursor:pointer;">Cancelar</button>
+                    <button type="submit" style="flex:2; padding:15px; background:var(--oro); color:black; border:none; border-radius:8px; font-weight:bold; cursor:pointer; text-transform:uppercase;">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <section id="catalogo" style="padding-top: 80px;">
+        <h2 style="text-align: center; letter-spacing: 5px; text-transform: uppercase;">Reserva Exclusiva</h2>
+        <div id="contenedor-productos-cliente" class="contenedor-grid">
+            </div>
+    </section>
+
+    <section id="contacto" style="padding: 100px 0;">
+        <div class="form-container">
+            <h2 style="color: var(--oro); text-align: center;">Servicio al Cliente</h2>
+            <p style="text-align: center; margin-bottom: 25px;">¿Dudas sobre nuestra bodega? Escríbenos.</p>
+            <form id="contact-form" class="formulario">
+                <input type="text" id="input-nombre" placeholder="Nombre" required>
+                <input type="email" id="input-email" placeholder="Correo electrónico" required>
+                <textarea id="input-mensaje" placeholder="Mensaje" rows="4" required></textarea>
+                <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+            </form>
+            <h3 id="mensaje-exito" style="display:none; color:#25d366; text-align: center; margin-top: 20px;">¡Mensaje recibido! Nos contactaremos pronto.</h3>
         </div>
     </section>
 
-    <section id="catalogo" class="seccion-catalogo">
-        <h2>Nuestro Catálogo</h2>
-        <div id="contenedor-productos" class="contenedor-grid"></div>
-    </section>
+    <footer>
+        <p>&copy; 2026 Licores el Amanecer.</p>
+        <a href="admin.html" style="color: #333; font-size: 0.8rem; text-decoration: none;">⚙️ Panel Admin</a>
+    </footer>
 
-    <section id="contacto" class="seccion-contacto">
-        <h2>Contáctanos</h2>
-        <p>¿Tienes alguna duda o un pedido para un evento especial? Escríbenos.</p>
-        
-        <form action="#" method="POST" class="formulario">
-            <input type="text" placeholder="Tu Nombre Completo" required>
-            <input type="email" placeholder="Tu Correo Electrónico" required>
-            <textarea placeholder="¿En qué te podemos ayudar?" rows="4" required></textarea>
-            <button type="submit" class="boton-enviar">Enviar Mensaje</button>
-        </form>
-    </section>
-
-    <a href="https://wa.me/573188051459?text=Hola!%20Necesito%20ayuda%20con%20un%20pedido%20en%20Licores%20el%20Amanecer" 
-       target="_blank" 
-       class="boton-flotante-wa">
-       💬 Asesoría WhatsApp
-    </a>
-
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

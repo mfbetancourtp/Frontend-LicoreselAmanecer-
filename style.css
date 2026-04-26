@@ -1,242 +1,77 @@
-/* Reseteo y Estilos Base */
-body {
-    background-color: #1a1a1a; 
-    color: #f1d9d9;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+    --oro: #D4AF37;
+    --negro-puro: #050505;
+    --negro-tarjeta: #121212;
+    --blanco-marfil: #FDFCF0;
+    --radio: 12px;
 }
 
-/* HEADER Y NAVEGACIÓN */
+body {
+    background-color: var(--negro-puro);
+    color: var(--blanco-marfil);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
 header {
-    background-color: #000; 
-    padding: 15px 40px;
+    background-color: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #c8a166;
-    position: sticky; 
-    top: 0;
-    z-index: 100;
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+    box-sizing: border-box;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #c8a166;
-}
+.logo { font-size: 1.5rem; color: var(--oro); font-weight: bold; text-transform: uppercase; }
 
-nav a {
-    color: #f1d9d9;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
 
-nav a:hover {
-    color: #c8a166;
-}
-
-/* PORTADA / HERO */
 .portada {
-    background-image: url('images.jpeg'); 
-    background-size: cover;        
-    background-position: center;  
-    background-color: #333; 
-    height: 85vh;                
-    display: flex;                
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), var(--negro-puro)), url('img/images.jpeg') center/cover;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white; 
-    position: relative;                
 }
 
-.portada::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
-}
-
-.contenido-portada {
-    z-index: 1; 
-}
-
-.contenido-portada h1 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: #c8a166;
-}
-
-.boton-principal {
-    display: inline-block;
-    background-color: #c8a166;
-    color: #000;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.boton-principal:hover {
-    background-color: #b08d57;
-}
-
-/* SECCIÓN CATÁLOGO Y GRID */
-.seccion-catalogo {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.seccion-catalogo h2 {
-    color: #c8a166;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
+.portada h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 0; }
 
 .contenedor-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
-    flex-wrap: wrap; 
+    padding: 20px 8%;
 }
 
 .tarjeta-producto {
-    background-color: #2a2a2a;
-    border: 1px solid #b08d57;
-    border-radius: 8px;
-    padding: 20px;
-    width: 260px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease; /* Transición suave para el CSS y el JS */
+    background: var(--negro-tarjeta);
+    border-radius: var(--radio);
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: 0.3s;
 }
 
-.tarjeta-producto:hover {
-    transform: translateY(-5px); 
-}
+.tarjeta-producto:hover { transform: translateY(-5px); border-color: var(--oro); }
 
-.imagen-producto {
-    width: 100%;           
-    height: 180px;         
-    object-fit: cover;     
-    border-radius: 5px;    
-    margin-bottom: 15px;    
-    border: 1px solid #333; 
-}
+.imagen-contenedor { width: 100%; height: 300px; overflow: hidden; }
+.imagen-producto { width: 100%; height: 100%; object-fit: cover; }
 
-.tarjeta-producto h3 {
-    margin: 10px 0;
-    font-size: 1.3em;
-}
+.info-producto { padding: 20px; text-align: center; }
+.info-producto h3 { margin: 0; font-size: 1.3rem; }
+.precio { color: var(--oro); font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
 
-.precio {
-    font-size: 1.4em;
-    color: #c8a166;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+.btn-group { display: flex; border-top: 1px solid #222; }
+.btn-edit, .btn-delete { flex: 1; padding: 15px; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+.btn-edit { background: transparent; color: var(--oro); }
+.btn-delete { background: transparent; color: #ff4d4d; }
 
-.boton-carrito {
-    background-color: #c8a166;
-    color: #000;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
+.form-container { background: #111; padding: 40px; border-radius: var(--radio); border: 1px solid #222; max-width: 600px; margin: 0 auto; }
+.formulario input, .formulario textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 8px; box-sizing: border-box; }
+.boton-enviar { background: var(--oro); border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
 
-.boton-carrito:hover {
-    background-color: #b08d57;
-}
-
-/* SECCIÓN CONTACTO Y FORMULARIO */
-.seccion-contacto {
-    background-color: #111; 
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.seccion-contacto h2 {
-    color: #c8a166;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.seccion-contacto p {
-    color: #ccc;
-    margin-bottom: 30px;
-    font-size: 1.1em;
-}
-
-.formulario {
-    max-width: 500px; 
-    margin: 0 auto;   
-    display: flex;
-    flex-direction: column; 
-    gap: 15px; 
-}
-
-.formulario input, 
-.formulario textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #b08d57;
-    border-radius: 5px;
-    background-color: #2a2a2a;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; 
-}
-
-.formulario input:focus, 
-.formulario textarea:focus {
-    outline: none;
-    border-color: #c8a166;
-    box-shadow: 0 0 8px rgba(200, 161, 102, 0.4);
-}
-
-.boton-enviar {
-    background-color: #c8a166;
-    color: #000;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-.boton-enviar:hover {
-    background-color: #b08d57;
-}
-
-/* WHATSAPP FLOTANTE */
-.boton-flotante-wa {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366; 
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-}
-
-.boton-flotante-wa:hover {
-    transform: scale(1.05);
-}
+footer { padding: 50px; text-align: center; background: #050505; border-top: 1px solid #111; }
